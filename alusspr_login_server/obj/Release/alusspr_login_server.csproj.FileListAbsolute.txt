@@ -1,0 +1,1 @@
+c:\users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\Release\alusspr_login_server.exe.config

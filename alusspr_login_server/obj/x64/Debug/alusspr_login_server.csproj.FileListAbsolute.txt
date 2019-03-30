@@ -1,0 +1,8 @@
+C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Debug\alusspr_login_server.exe.config
+C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Debug\alusspr_login_server.exe
+C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Debug\alusspr_login_server.pdb
+C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Debug\alusspr_login_server.Form1.resources
+C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Debug\alusspr_login_server.Properties.Resources.resources
+C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Debug\alusspr_login_server.csproj.GenerateResource.Cache
+C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Debug\alusspr_login_server.exe
+C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Debug\alusspr_login_server.pdb
