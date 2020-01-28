@@ -196,13 +196,16 @@ namespace alusspr_login_server
         {
             string log = string.Empty;
 
-            if (connected)
+            if (user.Length > 1)
             {
-                log = "[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Conectado: " + user + "\n";
-            }
-            else
-            {
-                log = "[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Desconectado: " + user + "\n";
+                if (connected)
+                {
+                    log = "[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Conectado: " + user + "\n";
+                }
+                else
+                {
+                    log = "[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Desconectado: " + user + "\n";
+                }
             }
 
             if (richTextBox1.InvokeRequired)
@@ -215,6 +218,7 @@ namespace alusspr_login_server
                         richTextBox1.Text = "...\n";
                     }
                     richTextBox1.AppendText(log);
+                    richTextBox1.Focus();
                 });
                 //-------------------------------------------->
             }
@@ -226,6 +230,7 @@ namespace alusspr_login_server
                     richTextBox1.Text = "...\n";
                 }
                 richTextBox1.AppendText(log);
+                richTextBox1.Focus();
             }
         }
 
