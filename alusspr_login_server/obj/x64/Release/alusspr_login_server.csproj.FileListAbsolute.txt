@@ -7,11 +7,6 @@ c:\users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\a
 c:\users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\alusspr_login_server.exe
 c:\users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\alusspr_login_server.pdb
 C:\Users\isaacpva45\documents\visual studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\alusspr_login_server.csprojResolveAssemblyReference.cache
-C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\alusspr_login_server.exe.config
-C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\alusspr_login_server.exe
-C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\alusspr_login_server.pdb
-C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\alusspr_login_server.exe
-C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\alusspr_login_server.pdb
 C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\ConsoleControl.dll
 C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\ConsoleControlAPI.dll
 C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\ConsoleControl.xml
@@ -20,3 +15,8 @@ C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alus
 C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\alusspr_login_server.Form1.resources
 C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\alusspr_login_server.Properties.Resources.resources
 C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\alusspr_login_server.csproj.GenerateResource.Cache
+C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\Alusspr Login Server.exe.config
+C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\Alusspr Login Server.exe
+C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\bin\x64\Release\Alusspr Login Server.pdb
+C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\Alusspr Login Server.exe
+C:\Users\SERVER2\Documents\Visual Studio 2015\Projects\alusspr_login_server\alusspr_login_server\obj\x64\Release\Alusspr Login Server.pdb
