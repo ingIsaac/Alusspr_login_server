@@ -195,7 +195,7 @@ namespace alusspr_login_server
             {
                 if (connected)
                 {
-                    console.WriteOutput("[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Conectado: " + user + "\n", Color.Green);
+                    console.WriteOutput("[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Conectado: " + user + "\n", Color.FromArgb(0, 192, 0));
                 }
                 else
                 {
