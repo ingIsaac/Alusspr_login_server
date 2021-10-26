@@ -11,6 +11,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Timers;
 using System.Diagnostics;
+using ConsoleControl;
 
 namespace alusspr_login_server
 {
@@ -21,24 +22,22 @@ namespace alusspr_login_server
         private Socket s_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         private List<object[]> client_sockets = new List<object[]>();
         private bool close = true;
+        private ConsoleControl.ConsoleControl console;
         int port = 6400;
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();         
             this.Text = Text + " - " + getSoftwareVersion();
             notifyIcon1.BalloonTipClicked += NotifyIcon1_BalloonTipClicked;
             notifyIcon1.DoubleClick += NotifyIcon1_DoubleClick;
             this.FormClosing += Form1_FormClosing;
             backgroundWorker1.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
-            richTextBox1.TextChanged += RichTextBox1_TextChanged;
-            
-        }
-
-        private void RichTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            richTextBox1.SelectionStart = richTextBox1.TextLength;
-            richTextBox1.ScrollToCaret();
+            //Console Setup
+            console = new ConsoleControl.ConsoleControl();
+            console.Dock = DockStyle.Fill;
+            console.Font = new Font("Microsoft Sans Serif", 10);
+            panel1.Controls.Add(console);
         }
 
         private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -46,7 +45,7 @@ namespace alusspr_login_server
             if(e.Result != null)
             {
                 string r = e.Result.ToString();
-                richTextBox1.AppendText(r);
+                console.WriteOutput(r, Color.White);
             }
             s_socket.Bind(new IPEndPoint(IPAddress.Any, port));
             s_socket.Listen(50);
@@ -80,8 +79,6 @@ namespace alusspr_login_server
                 MessageBox.Show("[Error] solo puede existir una instancia de este programa.", "AlussPR Login Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
             }
-            richTextBox1.Select();
-            richTextBox1.Focus();
             InitServer();
         }
 
@@ -89,8 +86,8 @@ namespace alusspr_login_server
         {
             System.Timers.Timer timer = new System.Timers.Timer(10000);
             timer.Elapsed += Timer_Elapsed;
-            timer.Start();           
-            richTextBox1.Text = "Iniciando Servidor...\n";
+            timer.Start();
+            console.WriteOutput("Iniciando Servidor...\n", Color.White);       
             if (!backgroundWorker1.IsBusy)
             {
                 backgroundWorker1.RunWorkerAsync();
@@ -194,44 +191,18 @@ namespace alusspr_login_server
 
         public void log(string user, bool connected)
         {
-            string log = string.Empty;
-
             if (user.Length > 1)
             {
                 if (connected)
                 {
-                    log = "[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Conectado: " + user + "\n";
+                    console.WriteOutput("[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Conectado: " + user + "\n", Color.LightGreen);
                 }
                 else
                 {
-                    log = "[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Desconectado: " + user + "\n";
+                    console.WriteOutput("[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Desconectado: " + user + "\n", Color.Red);
                 }
-            }
 
-            if (richTextBox1.InvokeRequired)
-            {                
-                //--------------------------------------------> Invoke
-                richTextBox1.Invoke((MethodInvoker)delegate {
-                    if ((richTextBox1.Text + log).Length >= richTextBox1.MaxLength)
-                    {
-                        richTextBox1.Clear();
-                        richTextBox1.Text = "...\n";
-                    }
-                    richTextBox1.AppendText(log);
-                    richTextBox1.Focus();
-                });
-                //-------------------------------------------->
-            }
-            else
-            {
-                if ((richTextBox1.Text + log).Length >= richTextBox1.MaxLength)
-                {
-                    richTextBox1.Clear();
-                    richTextBox1.Text = "...\n";
-                }
-                richTextBox1.AppendText(log);
-                richTextBox1.Focus();
-            }
+            }                      
         }
 
         public string getSoftwareVersion()
