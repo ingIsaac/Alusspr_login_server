@@ -40,12 +40,18 @@ namespace alusspr_login_server
             panel1.Controls.Add(console);
         }
 
+        private void sendConsoleOutputValue(string value, Color color)
+        {
+            console.WriteOutput(value, color);
+            console.InternalRichTextBox.ScrollToCaret();
+        }
+
         private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if(e.Result != null)
             {
                 string r = e.Result.ToString();
-                console.WriteOutput(r, Color.White);
+                sendConsoleOutputValue(r, Color.White);
             }
             s_socket.Bind(new IPEndPoint(IPAddress.Any, port));
             s_socket.Listen(50);
@@ -87,7 +93,7 @@ namespace alusspr_login_server
             System.Timers.Timer timer = new System.Timers.Timer(10000);
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
-            console.WriteOutput("Iniciando Servidor...\n", Color.White);       
+            sendConsoleOutputValue("Iniciando Servidor...\n", Color.White);
             if (!backgroundWorker1.IsBusy)
             {
                 backgroundWorker1.RunWorkerAsync();
@@ -195,11 +201,11 @@ namespace alusspr_login_server
             {
                 if (connected)
                 {
-                    console.WriteOutput("[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Conectado: " + user + "\n", Color.FromArgb(0, 192, 0));
+                    sendConsoleOutputValue("[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Conectado: " + user + "\n", Color.FromArgb(0, 192, 0));
                 }
                 else
                 {
-                    console.WriteOutput("[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Desconectado: " + user + "\n", Color.Red);
+                    sendConsoleOutputValue("[" + DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + "] -Desconectado: " + user + "\n", Color.Red);
                 }
 
             }                      
